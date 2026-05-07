@@ -35,3 +35,48 @@ export async function getCountyTimeseries(id: number): Promise<TimeseriesRow[]> 
   if (!res.ok) throw new Error("Failed to fetch timeseries");
   return res.json();
 }
+
+export interface DateRange {
+  min_date: string;
+  max_date: string;
+}
+
+export type MapMetric = "cases" | "deaths";
+
+export interface MapCasesRow {
+  fips: string;
+  cases: number;
+  deaths: number;
+  county: string;
+  state: string;
+}
+
+export async function getMapDateRange(): Promise<DateRange> {
+  const res = await fetch(`${BASE}/map/date-range`);
+  if (!res.ok) throw new Error("Failed to fetch date range");
+  return res.json();
+}
+
+export async function getMapCases(date: string): Promise<MapCasesRow[]> {
+  const res = await fetch(`${BASE}/map/cases?date=${encodeURIComponent(date)}`);
+  if (!res.ok) throw new Error("Failed to fetch map cases");
+  return res.json();
+}
+
+export interface StateInfo {
+  name: string;
+  short: string;
+  fips: string;
+}
+
+export async function getStates(): Promise<StateInfo[]> {
+  const res = await fetch(`${BASE}/map/states`);
+  if (!res.ok) throw new Error("Failed to fetch states");
+  return res.json();
+}
+
+export async function getStateCases(date: string, stateFips: string): Promise<MapCasesRow[]> {
+  const res = await fetch(`${BASE}/map/cases?date=${encodeURIComponent(date)}&state_fips=${stateFips}`);
+  if (!res.ok) throw new Error("Failed to fetch state cases");
+  return res.json();
+}

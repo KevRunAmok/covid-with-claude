@@ -36,7 +36,10 @@
       "PowerShell(Start-Sleep -Seconds 3; \\(Invoke-WebRequest -Uri \"http://localhost:5173\" -UseBasicParsing\\).StatusCode)",
       "PowerShell(Start-Process powershell -ArgumentList \"-NoExit\", \"-Command\", \"`$env:PGPASSWORD='claudeapp'; `$env:PATH+=';C:\\\\Program Files\\\\PostgreSQL\\\\18\\\\bin'; cd 'c:\\\\Users\\\\runya\\\\Claude Code\\\\Covid with Claude App\\\\api'; .venv\\\\Scripts\\\\uvicorn main:app --reload\")",
       "PowerShell(Start-Process powershell -ArgumentList \"-NoExit\", \"-Command\", \"cd 'c:\\\\Users\\\\runya\\\\Claude Code\\\\Covid with Claude App\\\\frontend'; npm run dev\")",
-      "PowerShell(gh --version)"
+      "PowerShell(gh --version)",
+      "PowerShell(Stop-Process -Name \"python\" -Force -ErrorAction SilentlyContinue)",
+      "PowerShell(Start-Process powershell -ArgumentList \"-NoExit\", \"-Command\", \"`$env:PGPASSWORD='claudeapp'; `$env:PATH+=';C:\\\\Program Files\\\\PostgreSQL\\\\18\\\\bin'; Set-Location 'c:\\\\Users\\\\runya\\\\Claude Code\\\\Covid with Claude App\\\\api'; .venv\\\\Scripts\\\\uvicorn main:app --reload\")",
+      "PowerShell(Invoke-RestMethod \"http://localhost:8000/api/map/cases?date=2021-01-01\")"
     ]
   }
 }

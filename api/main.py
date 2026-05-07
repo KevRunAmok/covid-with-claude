@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from routers import counties
+from routers import counties, map
 
 app = FastAPI()
 
@@ -12,3 +12,4 @@ app.add_middleware(
 )
 
 app.include_router(counties.router)
+app.include_router(map.router)

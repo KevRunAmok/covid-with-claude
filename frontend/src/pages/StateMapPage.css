@@ -1,0 +1,16 @@
+.state-select {
+  padding: 8px 12px;
+  font-size: 15px;
+  font-family: var(--sans);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text-h);
+  outline: none;
+  cursor: pointer;
+  min-width: 200px;
+}
+
+.state-select:focus {
+  border-color: var(--accent);
+}

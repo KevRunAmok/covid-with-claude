@@ -1,0 +1,126 @@
+.map-page {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+}
+
+.map-page-header {
+  padding: 32px 40px 24px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.map-page-title {
+  font-size: 32px;
+  margin: 0 0 4px;
+  letter-spacing: -0.5px;
+}
+
+.map-page-sub {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.map-controls-bar {
+  display: flex;
+  align-items: flex-end;
+  gap: 24px;
+}
+
+.date-picker-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.date-picker-group label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text);
+}
+
+.date-picker-group input[type="date"] {
+  padding: 8px 12px;
+  font-size: 15px;
+  font-family: var(--sans);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text-h);
+  outline: none;
+  cursor: pointer;
+}
+
+.date-picker-group input[type="date"]:focus {
+  border-color: var(--accent);
+}
+
+.map-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-bottom: 2px;
+}
+
+.map-stat-label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text);
+}
+
+.map-stat-value {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-h);
+  font-family: var(--mono);
+}
+
+.metric-toggle {
+  display: flex;
+  background: var(--code-bg);
+  border-radius: 8px;
+  padding: 3px;
+  gap: 2px;
+}
+
+.metric-btn {
+  padding: 6px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  font-family: var(--sans);
+  transition: background 0.15s, color 0.15s;
+}
+
+.metric-btn.active {
+  background: var(--bg);
+  color: #d97706;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.metric-btn.deaths.active {
+  color: #7c3aed;
+}
+
+.map-page > .usa-map-wrapper {
+  flex: 1;
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  height: calc(100svh - 140px);
+}
