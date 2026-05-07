@@ -1,0 +1,42 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem -Path \"c:\\\\Users\\\\runya\\\\Claude Code\\\\Covid with Claude App\" -Force | Select-Object Name, @{Name=\"Type\";Expression={if\\($_.PSIsContainer\\){\"DIR\"}else{\"FILE\"}}}, @{Name=\"Size\";Expression={if\\($_.PSIsContainer\\){\"-\"}else{$_.Length}}} | Format-Table -AutoSize)",
+      "PowerShell(Get-ChildItem -Path \"c:\\\\Users\\\\runya\\\\Claude Code\\\\Covid with Claude App\\\\Data\" -Force | Select-Object Name, @{Name=\"Type\";Expression={if\\($_.PSIsContainer\\){\"DIR\"}else{\"FILE\"}}}, @{Name=\"Size\";Expression={if\\($_.PSIsContainer\\){\"-\"}else{\"{0:N0}\" -f $_.Length}}} | Format-Table -AutoSize)",
+      "PowerShell(Get-ChildItem -Path \"c:\\\\Users\\\\runya\\\\Claude Code\\\\Covid with Claude App\\\\.claude\" -Force | Select-Object Name, @{Name=\"Type\";Expression={if\\($_.PSIsContainer\\){\"DIR\"}else{\"FILE\"}}}  | Format-Table -AutoSize)",
+      "PowerShell(winget --version)",
+      "PowerShell(python --version)",
+      "PowerShell(python -c \"import sys; print\\(sys.executable\\)\")",
+      "PowerShell(py --version)",
+      "PowerShell(py -c \"import sys; print\\(sys.executable\\)\")",
+      "PowerShell(winget install Python.Python.3.12)",
+      "PowerShell(pip install uv)",
+      "PowerShell(winget install OpenJS.NodeJS.LTS)",
+      "PowerShell(node --version)",
+      "PowerShell(npm --version)",
+      "PowerShell(Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned -Force)",
+      "PowerShell(winget install PostgreSQL.PostgreSQL.17)",
+      "PowerShell(psql --version)",
+      "PowerShell($env:PGPASSWORD = \"claudeapp\"; $env:PATH += \";C:\\\\Program Files\\\\PostgreSQL\\\\18\\\\bin\"; psql -U postgres -h localhost -c \"CREATE DATABASE covid19;\")",
+      "PowerShell($env:PATH += \";C:\\\\Program Files\\\\PostgreSQL\\\\18\\\\bin\"; netstat -ano | findstr \"LISTEN\" | findstr \"543\")",
+      "PowerShell($env:PGPASSWORD = \"claudeapp\"; $env:PATH += \";C:\\\\Program Files\\\\PostgreSQL\\\\18\\\\bin\"; psql -U postgres -h localhost -p 5433 -c \"SELECT version\\(\\);\")",
+      "PowerShell($env:PGPASSWORD = \"claudeapp\"; $env:PATH += \";C:\\\\Program Files\\\\PostgreSQL\\\\18\\\\bin\"; psql -U postgres -h localhost -p 5433 -c \"CREATE DATABASE covid19;\")",
+      "PowerShell($env:PGPASSWORD = \"claudeapp\"; $env:PATH += \";C:\\\\Program Files\\\\PostgreSQL\\\\18\\\\bin\"; psql -U postgres -h localhost -p 5433 -d covid19 -f \"c:\\\\Users\\\\runya\\\\Claude Code\\\\Covid with Claude App\\\\scripts\\\\schema.sql\")",
+      "PowerShell($env:PGPASSWORD = \"claudeapp\"; $env:PATH += \";C:\\\\Program Files\\\\PostgreSQL\\\\18\\\\bin\"; cd \"c:\\\\Users\\\\runya\\\\Claude Code\\\\Covid with Claude App\"; python scripts/import_data.py)",
+      "PowerShell($env:PGPASSWORD = \"claudeapp\"; $env:PATH += \";C:\\\\Program Files\\\\PostgreSQL\\\\18\\\\bin\"; psql -U postgres -h localhost -p 5433 -c \"DROP DATABASE covid19; CREATE DATABASE covid19;\"; psql -U postgres -h localhost -p 5433 -d covid19 -f \"c:\\\\Users\\\\runya\\\\Claude Code\\\\Covid with Claude App\\\\scripts\\\\schema.sql\")",
+      "PowerShell($env:PGPASSWORD = \"claudeapp\"; $env:PATH += \";C:\\\\Program Files\\\\PostgreSQL\\\\18\\\\bin\"; psql -U postgres -h localhost -p 5433 -c \"DROP DATABASE covid19\"; psql -U postgres -h localhost -p 5433 -c \"CREATE DATABASE covid19\"; psql -U postgres -h localhost -p 5433 -d covid19 -f \"c:\\\\Users\\\\runya\\\\Claude Code\\\\Covid with Claude App\\\\scripts\\\\schema.sql\")",
+      "PowerShell(New-Item -ItemType Directory -Path \"c:\\\\Users\\\\runya\\\\Claude Code\\\\Covid with Claude App\\\\api\\\\routers\" -Force)",
+      "PowerShell(New-Item -ItemType Directory -Path \"c:\\\\Users\\\\runya\\\\Claude Code\\\\Covid with Claude App\\\\frontend\\\\src\\\\api\" -Force)",
+      "PowerShell(New-Item -ItemType Directory -Path \"c:\\\\Users\\\\runya\\\\Claude Code\\\\Covid with Claude App\\\\frontend\\\\src\\\\pages\" -Force)",
+      "PowerShell(New-Item -ItemType Directory -Path \"c:\\\\Users\\\\runya\\\\Claude Code\\\\Covid with Claude App\\\\frontend\\\\src\\\\components\" -Force)",
+      "PowerShell($env:PATH += \";C:\\\\Program Files\\\\PostgreSQL\\\\18\\\\bin\"; cd \"c:\\\\Users\\\\runya\\\\Claude Code\\\\Covid with Claude App\\\\api\"; Start-Process powershell -ArgumentList \"-NoExit\", \"-Command\", \"`$env:PGPASSWORD='claudeapp'; `$env:PATH+=';C:\\\\Program Files\\\\PostgreSQL\\\\18\\\\bin'; cd 'c:\\\\Users\\\\runya\\\\Claude Code\\\\Covid with Claude App\\\\api'; .venv\\\\Scripts\\\\uvicorn main:app --reload\")",
+      "PowerShell(cd \"c:\\\\Users\\\\runya\\\\Claude Code\\\\Covid with Claude App\\\\frontend\"; Start-Process powershell -ArgumentList \"-NoExit\", \"-Command\", \"cd 'c:\\\\Users\\\\runya\\\\Claude Code\\\\Covid with Claude App\\\\frontend'; npm run dev\")",
+      "PowerShell(Invoke-WebRequest -Uri \"http://localhost:8000/api/counties?search=los\" -UseBasicParsing)",
+      "PowerShell(Invoke-WebRequest -Uri \"http://localhost:5173\" -UseBasicParsing)",
+      "PowerShell(Start-Sleep -Seconds 3; \\(Invoke-WebRequest -Uri \"http://localhost:5173\" -UseBasicParsing\\).StatusCode)",
+      "PowerShell(Start-Process powershell -ArgumentList \"-NoExit\", \"-Command\", \"`$env:PGPASSWORD='claudeapp'; `$env:PATH+=';C:\\\\Program Files\\\\PostgreSQL\\\\18\\\\bin'; cd 'c:\\\\Users\\\\runya\\\\Claude Code\\\\Covid with Claude App\\\\api'; .venv\\\\Scripts\\\\uvicorn main:app --reload\")",
+      "PowerShell(Start-Process powershell -ArgumentList \"-NoExit\", \"-Command\", \"cd 'c:\\\\Users\\\\runya\\\\Claude Code\\\\Covid with Claude App\\\\frontend'; npm run dev\")",
+      "PowerShell(gh --version)"
+    ]
+  }
+}

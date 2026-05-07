@@ -1,0 +1,29 @@
+# Data files (large SQL dumps)
+Data/
+
+# Python
+api/.venv/
+api/__pycache__/
+api/**/__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.python-version
+
+# Node
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Environment / secrets
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
